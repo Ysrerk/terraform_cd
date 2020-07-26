@@ -1,6 +1,7 @@
 resource "aws_subnet" "public_subnet" {
-  vpc_id     = "vpc-0c34f39c64fdd2a4a"
+  vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.1.0/24"
+  map_public_ip_on_launch =true
 
   tags = {
     Name = "public_subnet"
